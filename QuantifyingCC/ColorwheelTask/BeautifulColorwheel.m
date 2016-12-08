@@ -54,7 +54,7 @@ try
     end
 
     %% set experiment parameters
-    pms.numTrials = 32; % adaptable; important to be dividable by 2 (conditions) and multiple of 4 (set size)
+    pms.numTrials = 48; % adaptable; important to be dividable by 2 (conditions) and multiple of 4 (set size)
     pms.numBlocks = 2;
 
     pms.numCondi = 2;  % 0 IGNORE, 2 UPDATE
@@ -62,7 +62,7 @@ try
     pms.numBlocksPr=1; %blocks for practice
     pms.redoTrials=24; %trials for Redo
     pms.redoBlocks=1; %blocks for Redo
-    pms.maxSetsize=4; %maximum number of squares used
+    pms.maxSetsize=3; %maximum number of squares used
     
     pms.nameTrials=24; %trials for color naming task
     

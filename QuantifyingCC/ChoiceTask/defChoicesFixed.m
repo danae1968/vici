@@ -27,9 +27,9 @@ end
     hardOffer1=repmat(2, pms.numChoices1/pms.numBlocks,1);
     hardOffer2=repmat(2,pms.numChoices2/pms.numBlocks,1);
     locationEasy1=repmat([1,2]',length(easyOffer1)/2,1);
-    locationEasy2=repmat([1,2]',length(easyOffer2)/2,1);
+    locationEasy2=repmat([1,2]',round(length(easyOffer2)/2),1);
     trlArray1=[version1 typeVector1 easyOffer1 hardOffer1 locationEasy1]; 
-    trlArray2=[version2 typeVector2 easyOffer2 hardOffer2 locationEasy2];
+    trlArray2=[version2 typeVector2 easyOffer2 hardOffer2 locationEasy2(1:floor(length(locationEasy2)))];
             
 %% this is when we want to counterbalance cells per block, not per repetition,         
 % for n=1:length(pms.typeTask1)
@@ -81,8 +81,6 @@ data.key=zeros(pms.numChoices,100);
 
 for i = 1:pms.numChoices
     switch data.typeTask(i)
-        case {1 5} %setsize 1 (versus No redo)
-            data.sz(i) =1;
         case {2 6} %setsize 2(versus No redo)
             data.sz(i) =2;
         case {3 7}  %setsize 3 (versus No redo)
@@ -92,9 +90,9 @@ for i = 1:pms.numChoices
     end
     if data.version(i)==1
         switch data.typeTask(i)
-            case {1 2 3 4} %all IGNORE
+            case {2 3 4} %all IGNORE
                 data.condition(i) = 0;
-            case {5 6 7 8} %all UPDATE
+            case {6 7 8} %all UPDATE
                 data.condition(i) = 2;
         end
     end
