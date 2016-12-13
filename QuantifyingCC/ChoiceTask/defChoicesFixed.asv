@@ -18,9 +18,13 @@ end
     version1=ones(pms.numChoices1/pms.numBlocks,1); %no redo
     typeVector1=repmat(pms.typeTask1,pms.numPairs1*pms.reps/pms.numBlocks,1);typeVector1=typeVector1(:);
     easyOffer1=repmat(pms.easyOffer1', pms.numChoices1/(pms.numBlocks*pms.numPairs1),1);
+    easyOffer2=repmat(pms.easyOffer2',pms.numChoices2/(pms.numPairs2*pms.numBlocks),1);
     hardOffer1=repmat(2, pms.numChoices1/pms.numBlocks,1);
+    hardOffer2=repmat(2,pms.numChoices2/pms.numBlocks,1);
     locationEasy1=repmat([1,2]',length(easyOffer1)/2,1);
+    locationEasy2=repmat([1,2]',length(easyOffer2)/2,1);
     trlArray1=[version1 typeVector1 easyOffer1 hardOffer1 locationEasy1]; 
+    trlArray2=[version2 typeVector2 easyOffer2 hardOffer2 locationEasy2];
             
 %% this is when we want to counterbalance cells per block, not per repetition,         
 % for n=1:length(pms.typeTask1)
@@ -37,7 +41,7 @@ end
 %     trlArray=sortrows(trlArray,6);
 %% blocking per repetition
        
-    trlArray=trlArray1;   
+    trlArray=[trlArray1; trlArray2];   
  %% this is when we want to counterbalance cells per block, not per repetition,         
    
 %     b1=trlArray(trlArray(:,6)==1,:);b1=b1(randperm(length(b1))',:);

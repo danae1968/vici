@@ -44,19 +44,13 @@ try
     pms.step=0.2;
     pms.min=[0.1 0.2]; %smallest offer 0.1, then 0.2 then increases by step
     pms.max1=2.2; %max amount offered for v1
-    pms.max2=4;%max amount offered for v2
     pms.reps=3;%repetitions
     pms.hardOffer=2; %offer for hard task that remains fixed
     pms.easyOffer1=pms.min(2):pms.step:pms.max1; pms.easyOffer1=[pms.min(1) round(pms.easyOffer1*10)/10]; %fix bug and pairs for easy task
-    pms.easyOffer2=pms.min(2):pms.step:pms.max2; pms.easyOffer2=[pms.min(1) round(pms.easyOffer2*10)/10];   %fix bug
     pms.numPairs1=length(pms.easyOffer1);%number of pairs
-    pms.numPairs2=length(pms.easyOffer2);
     pms.typeTask1 = 1:8; %1:4, Ignore all set sizes, 5:8 Update all set sizes
-    pms.typeTask2=1:4; %direct comparison has no condition so only 4
     pms.Conditions = {0,2}; %UPDATE IGNORE
     pms.numChoices1 = length(pms.typeTask1)*length(pms.easyOffer1)*pms.reps; %number of choices per version
-    pms.numChoices2 = length(pms.typeTask2)*length(pms.easyOffer2)*pms.reps;
-    pms.numChoices=pms.numChoices1+pms.numChoices2; %total number of choices
 
     %%practice
     pms.repsPrac=1; %repetitions for practice if we want to vary the offers
@@ -64,13 +58,10 @@ try
 %     pms.easyOffer1Prac=pms.min:pms.stepPrac:pms.max1;
 %     pms.easyOffer2Prac=pms.min:pms.stepPrac:pms.max2;
     pms.easyOffer1Prac=2; %easy offer for practice is always to avoid biasing them
-    pms.easyOffer2Prac=2;
     pms.numPairs1Prac=length(pms.easyOffer1Prac); %number of pairs for practice per version
-    pms.numPairs2Prac=length(pms.easyOffer2Prac);    
     pms.numChoices1Prac = length(pms.typeTask1)*length(pms.easyOffer1Prac)*pms.repsPrac;
-    pms.numChoices2Prac = length(pms.typeTask2)*length(pms.easyOffer2Prac)*pms.repsPrac;
-    pms.numChoicesPrac=pms.numChoices1Prac+pms.numChoices2Prac;
-    
+    pms.numChoicesPrac=pms.numChoices1Prac;
+    pms.numChoices=pms.numChoices1;
     pms.setSize=1:4;
     pms.numBlocks=3;%number of blocks
     pms.numBlocksPrac=1;
@@ -81,7 +72,7 @@ try
     pms.allowedResps.right = '.2';
     % timings
     pms.fixation = 1; %fixation before task
-    pms.maxRT =6; % max RT
+    pms.maxRT =4; % max RT
     pms.iti = 0.5; %between trials
     pms.jitter = 0; % should trial duration be jittered (no: 0, yes: 1)
     
