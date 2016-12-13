@@ -79,19 +79,19 @@ try
     pms.matlabVersion='R2013a';
     % timings
     pms.maxRT = 4; % max RT
-    pms.encDuration = 0.5;    %2 seconds of encoding
-    pms.encDurationIgn=0.5;
-    pms.encDurationUpd=0.5;
+    pms.encDuration = 2;    %2 seconds of encoding
+    pms.encDurationIgn=2;
+    pms.encDurationUpd=2;
     pms.delay1DurationPr = 2; %2 seconds of delay 1 during practice
     pms.delay1DurationUpd=2;
     pms.delay1DurationIgn=2;        
-    pms.interfDurationPr = 0.5; %2 seconds interfering stim during practice
-    pms.interfDurationIgn=0.5;
-    pms.interfDurationUpd=0.5;
+    pms.interfDurationPr = 2; %2 seconds interfering stim during practice
+    pms.interfDurationIgn=2;
+    pms.interfDurationUpd=2;
     pms.delay2DurationIgnPr = 2; %2 seconds of delay 2 during practice
-    pms.delay2DurationUpdPr=4.5;
+    pms.delay2DurationUpdPr=6;
     pms.delay2DurationIgn=2;
-    pms.delay2DurationUpd=4.5;
+    pms.delay2DurationUpd=6;
     pms.feedbackDuration=0.5; %feedback during colorwheel
     pms.feedbackDurationPr=1;
     pms.jitter = 0;
