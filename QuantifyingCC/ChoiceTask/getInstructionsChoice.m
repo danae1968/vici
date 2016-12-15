@@ -78,7 +78,7 @@ elseif level==4
     Instruction{2}='Good luck!';
     
 elseif level==5
-    Instruction{1}='This was the end of the choice task! \n\n Now one of your choices will be selected for the redo.';
+    Instruction{1}='This was the end of the experiment! Thank you for participating.';
 end
 counter=1;
 
