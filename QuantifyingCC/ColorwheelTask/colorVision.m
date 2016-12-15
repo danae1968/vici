@@ -14,7 +14,7 @@ function [colorTestData]=colorVision(pms,wPtr,rect)
 % Screen('TextStyle',wPtr,1);
 % Screen('TextFont',wPtr,'Times New Roman');
 
-numTrials=pms.nameTrials;
+numTrials=pms.colorTrials;
 rectOne=[0 0 100 100];
 centerX=rect(3)/2;
 centerY=rect(4)/2;

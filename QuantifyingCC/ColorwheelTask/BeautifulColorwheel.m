@@ -63,7 +63,7 @@ try
     pms.redoTrials=128; %trials for Redo
     pms.redoBlocks=2; %blocks for Redo
     pms.maxSetsize=4; %maximum number of squares used
-        
+    pms.colorTrials=12;    
     %colors
     pms.numWheelColors=512;
     
@@ -101,10 +101,7 @@ try
         pms.colordir=pwd;
     end
     %% display and screen
-    % display parameters
-    %     mon = 0; % 0 for primary monitor
-    %     pms.bkgd = 200; % intensity level of background gray
-    
+   
     % bit Added to address problem with high precision timestamping related
     % to graphics card problems
     
@@ -172,9 +169,9 @@ try
     Screen('TextStyle',wPtr,pms.textStyle);
     Screen('TextFont',wPtr,pms.textFont);
   %% Color vision task
-%   if practice==1
-%   colorVision(pms,wPtr,rect)
-%   end
+  if practice==1
+  colorVision(pms,wPtr,rect)
+  end
     %% Experiment starts with instructions
     %%%%%%% get instructions
     % show instructions
