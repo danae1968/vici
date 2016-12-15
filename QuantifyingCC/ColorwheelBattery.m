@@ -56,7 +56,7 @@ end
 cd(chdir)
 BeautifulChoices(subNo,1,subdirCh);
 [~,choiceSZ,choiceCondition,bonus]=BeautifulChoices(subNo,0,subdirCh);
-cd(cwdir)
+cd(rootdir)
 
-BeautifulColorwheel(subNo,2,subdir,choiceSZ,choiceCondition,bonus)
+% BeautifulColorwheel(subNo,2,subdir,choiceSZ,choiceCondition,bonus)
 
