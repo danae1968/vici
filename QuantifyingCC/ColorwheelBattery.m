@@ -2,8 +2,20 @@
 clear all
 close all
 
-subNo= num2str(input('Subject ID: '));
-sessionNo=num2str(input('Session: '));
+subNo= (input('Subject ID: '));
+sessionNo=(input('Session: '));
+
+if ischar(subNo)
+subNo=str2num(subNo);
+else
+subNo=subNo;
+end
+if ischar(sessionNo)
+sessionNo=str2num(sessionNo);
+else
+sessionNo=sessionNo;
+end 
+
 checked=input(sprintf('participant number is %d and session %d',subNo,sessionNo));
 
 % create directories.
