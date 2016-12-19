@@ -2,8 +2,8 @@
 clear all
 close all
 
-subNo= input('Subject ID: ');
-sessionNo=input('Session:  ');
+subNo= num2str(input('Subject ID: '));
+sessionNo=num2str(input('Session: '));
 checked=input(sprintf('participant number is %d and session %d',subNo,sessionNo));
 
 % create directories.
@@ -29,7 +29,6 @@ else
     mkdir(colordir,sprintf('Colorwheel_sub_%d_%d_session_%d',subNo,randAttach,sessionNo));
 end
 
-cd(cwdir)
 
 disp('TASK 1: Colorwheel');          % display which task starts.
 WaitSecs(2)
@@ -54,10 +53,8 @@ else
     randAttach = round(rand*10000);
     mkdir(choiceDir,sprintf('Choices_sub_%d_%d_session_%d',subNo,randAttach,sessionNo));
 end
-cd(chdir)
 BeautifulChoices(subNo,1,subdirCh);
 [~,choiceSZ,choiceCondition,bonus]=BeautifulChoices(subNo,0,subdirCh);
-cd(rootdir)
 
 % BeautifulColorwheel(subNo,2,subdir,choiceSZ,choiceCondition,bonus)
 
