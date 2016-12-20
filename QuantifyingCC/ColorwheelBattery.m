@@ -34,8 +34,8 @@ cd(cwdir)
 disp('TASK 1: Colorwheel');          % display which task starts.
 WaitSecs(2)
 
-% BeautifulColorwheel(subNo,1,subdir,sessionNo) %practice=1
-% BeautifulColorwheel(subNo,0,subdir,sessionNo) %practice=0
+BeautifulColorwheel(subNo,1,subdir,sessionNo) %practice=1
+BeautifulColorwheel(subNo,0,subdir,sessionNo) %practice=0
 
 %%% choice task
 disp('TASK 2: Choices');
