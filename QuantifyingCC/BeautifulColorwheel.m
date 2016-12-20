@@ -35,11 +35,12 @@ try
         case 0
     %% Provides subject number and practice status as keyboard input, names of the files and which manipulation should be used. Go into this function to adapt log-file name.
     [subNo,dataFilename,dataFilenamePrelim,practice,manipulation]=getInfo;
-        case 3
+        case 4
             subNo=varargin{1};
             practice=varargin{2};
             colordir=varargin{3};
-    [subNo,dataFilename,dataFilenamePrelim,practice,manipulation]=getInfo(subNo,practice);            
+            session=varargin{4};
+    [subNo,dataFilename,dataFilenamePrelim,practice,manipulation,session]=getInfo(subNo,practice,session);            
 
         case 6
             subNo=varargin{1};
@@ -76,6 +77,7 @@ try
     pms.textFont='Times New Roman';
     pms.textStyle=1; 
     pms.subNo=subNo;
+    pms.session=session;
     pms.matlabVersion='R2013a';
     % timings
     pms.maxRT = 4; % max RT

@@ -288,7 +288,8 @@ for p=1:pms.numBlocks
                 end
                 
                 [respDif,tau,thetaCorrect,radius,lureDif]=respDev(colortheta,trial(g,p).probeColorCorrect,trial(g,p).lureColor,respX,respY,rect);
-         
+                             save(fullfile(pms.colordir,dataFilenamePrelim));
+
          %Break after every block
                if practice==0
                if g==pms.numTrials && p<pms.numBlocks

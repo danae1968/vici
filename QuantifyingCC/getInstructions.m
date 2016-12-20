@@ -24,7 +24,7 @@ if level == 1
     
     Instruction{1} = 'Welcome to our experiment.\n You can walk through the instructions by using the left and right arrow keys.\n Press a key to start...';
     Instruction{2} = 'The first part is a memory task.\n Every trial of the task consists of 3 phases. First, you will have to memorize colors and locations. Then, you see new colors that you might need to memorize. Finally you are tested on our colorwheel!';
-    Instruction{3} =sprintf('Phase 1: you will see a colored square on the screen.\n The square will be shown for %d seconds.',pms.encDuration);
+    Instruction{3} =sprintf('Phase 1: you will see a colored square on the screen.\n The square will be shown for %.1f seconds.',pms.encDuration);
     Instruction{4} = 'You need to memorize the color and the location of the square.';
     imgEnc=imread('Encoding.png');
     imageEnc=Screen('MakeTexture',wPtr,imgEnc);

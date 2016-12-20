@@ -45,8 +45,8 @@ end
 disp('TASK 1: Colorwheel');          % display which task starts.
 WaitSecs(2)
 
-BeautifulColorwheel(subNo,1,subdir) %practice=1
-BeautifulColorwheel(subNo,0,subdir) %practice=0
+BeautifulColorwheel(subNo,1,subdir,sessionNo) %practice=1
+BeautifulColorwheel(subNo,0,subdir,sessionNo) %practice=0
 
 %%% choice task
 disp('TASK 2: Choices');
@@ -60,13 +60,13 @@ end
 subdirCh = fullfile(choiceDir,sprintf('Choices_sub_%d_session_%d',subNo,sessionNo));
 
 if ~exist(subdirCh,'dir')
-    mkdir(choiceDir,sprintf('Choices_sub_%d_session_%d',subNo,sessionNo,subNo));
+    mkdir(choiceDir,sprintf('Choices_sub_%d_session_%d',subNo,sessionNo));
 else
     randAttach = round(rand*10000);
     mkdir(choiceDir,sprintf('Choices_sub_%d_%d_session_%d',subNo,randAttach,sessionNo));
 end
-BeautifulChoices(subNo,1,subdirCh);
-[~,choiceSZ,choiceCondition,bonus]=BeautifulChoices(subNo,0,subdirCh);
+BeautifulChoices(subNo,1,subdirCh,sessionNo);
+BeautifulChoices(subNo,0,subdirCh,sessionNo);
 
 % BeautifulColorwheel(subNo,2,subdir,choiceSZ,choiceCondition,bonus)
 

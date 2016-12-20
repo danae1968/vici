@@ -1,4 +1,4 @@
-function [subNo,dataFilename,dataFilenamePrelim,practice]=getInfoChoice(varargin)
+function [subNo,dataFilename,dataFilenamePrelim,practice,session]=getInfoChoice(varargin)
 %gives subject number
 
 switch nargin
@@ -16,17 +16,18 @@ switch practice
 end
 
 checked=input(prompt3);
-    case 2
+    case 3
         subNo=varargin{1};
         practice=varargin{2};
+        session=varargin{3};
 end
         
 if practice==0
-    dataFilename = sprintf('ColorFunChoice_s%d.mat',subNo);
-    dataFilenamePrelim=sprintf('CFChoice_s%d_pre.mat',subNo);
+    dataFilename = sprintf('ColorFunChoice_s%d_ses%d.mat',subNo,session);
+    dataFilenamePrelim=sprintf('CFChoice_s%d_ses%d_pre.mat',subNo,session);
 elseif practice==1
-    dataFilename = sprintf('ColorFunChoice_s%d_practice.mat',subNo);
-    dataFilenamePrelim=sprintf('CFChoice_s%d_pre_practice.mat',subNo);
+    dataFilename = sprintf('ColorFunChoice_s%d_ses%d_practice.mat',subNo,session);
+    dataFilenamePrelim=sprintf('CFChoice_s%d_ses%d_pre_practice.mat',subNo,session);
 end
 
 if exist (dataFilename,'file')

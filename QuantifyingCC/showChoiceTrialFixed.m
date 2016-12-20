@@ -31,9 +31,8 @@ for trial = 1:length(data.trialNumber)
     
     save(fullfile(pms.choicedir,dataFilenamePrelim.dataFilenamePrelim))
     
-    msgMoney=double('for €');
-    msgHard = sprintf('%s%.2f',msgMoney,data.hardOffer(trial));
-    msgEasy = sprintf('%s%.2f',msgMoney,data.easyOffer(trial));
+    msgHard = double(sprintf('for €%.2f',data.hardOffer(trial)));
+    msgEasy = double(sprintf('for €%.2f',data.easyOffer(trial)));
     
     switch data.locationEasy(trial)
         case 1 %means easy option left, hard right
