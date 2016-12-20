@@ -59,7 +59,7 @@ try
     pms.numBlocks = 2;
 
     pms.numCondi = 2;  % 0 IGNORE, 2 UPDATE
-    pms.numTrialsPr=4; %trials for practice
+    pms.numTrialsPr=16; %trials for practice
     pms.numBlocksPr=1; %blocks for practice
     pms.redoTrials=128; %trials for Redo
     pms.redoBlocks=2; %blocks for Redo
