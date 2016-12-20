@@ -49,7 +49,7 @@ end
 subdirCh = fullfile(choiceDir,sprintf('Choices_sub_%d_session_%d',subNo,sessionNo));
 
 if ~exist(subdirCh,'dir')
-    mkdir(choiceDir,sprintf('Choices_sub_%d_session_%d',subNo,sessionNo,subNo));
+    mkdir(choiceDir,sprintf('Choices_sub_%d_session_%d',subNo,sessionNo));
 else
     randAttach = round(rand*10000);
     mkdir(choiceDir,sprintf('Choices_sub_%d_%d_session_%d',subNo,randAttach,sessionNo));

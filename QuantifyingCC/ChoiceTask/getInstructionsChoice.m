@@ -55,30 +55,38 @@ if level == 1
     Instruction{8}='Press any key to start the practice of this part.\n These choices are not counting yet.';
     
 elseif level == 2
-    Instruction{1}='You will also have the opportunity to avoid doing the redo and still earn a bonus. If you choose the No Redo option, then you can use the remaining time as you please, using the computer, your phone etc.';
+    Instruction{1} = 'Welcome to the choice task.\n You can walk through the instructions by using the left and right arrow keys.\n Press space to start...';
+    Instruction{2} = 'During this part you can win a bonus by redoing a few more blocks of the colorwheel task. However, the difficulty of the redo and the amount of the bonus will be based on choices that you will make beforehand.'; 
+    Instruction{3}='You will also have the opportunity to avoid doing the redo and still earn a bonus. If you choose the No Redo option, then you can use the remaining time as you please, using the computer, your phone etc.';
     imgChoiceNR=imread('ChoiceNoRedo.png');
     imageChoiceNR=Screen('MakeTexture',wPtr,imgChoiceNR);
-    Instruction{2}='\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n For example: Would you rather receive 2 euros for Ignoring 3 squares or 60 cents for not doing a redo?';
-    Instruction{3}='Press any key to start practice for these trials';
-elseif level==3
-    Instruction{1}= 'You will make many choices of both types. One of them will be selected and you will redo one to three blocks of the colorwheel task based on that choice. 70% of all trials of the blocks you will do will consist of that choice.';
-    Instruction{2}='The number of blocks of the redo is randomly selected by the computer.';
-    Instruction{3}= 'The amount of money of the bonus represents all blocks and not a single trial and it is extra to the agreed amount for the experiment. You will receive it if your performance during the redo is similar to your performance in the first two blocks of the colorwheel task.';
+  
+    Instruction{4}='\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n For example: Would you rather receive 2 euros for Ignoring 3 squares or 60 cents for not doing a redo?';
+    Instruction{5} = sprintf('To select the left option, press 1 and for the right option press 2. You have %d seconds to respond.',pms.maxRT);
     imgChoiceMade=imread('ChoiceMadeDirect.png');
     imageChoiceMade=Screen('MakeTexture',wPtr,imgChoiceMade);
-    Instruction{4}= '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n For example, if this choice is selected you will do a few blocks of mostly Update 4 and you will earn 2 euros.';
-    imgChoiceExample=imread('ChoiceMadeExample2.png');
+    Instruction{6}='\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n A square is shown to indicate that your choice has been made';
+    Instruction{7}='Press any key to start practice for these trials';
+
+elseif level==3
+    Instruction{1}= 'You will make many similar choices. One of them will be selected and you will redo one to three blocks of the colorwheel task based on that choice. 70% of all trials of the blocks you will do will consist of that choice.';
+    Instruction{2}='The number of blocks of the redo is randomly selected by the computer.';
+    Instruction{3}= 'The amount of money of the bonus represents all blocks and not a single trial and it is extra to the agreed amount for the experiment. You will receive it if your performance during the redo is similar to your performance in the first two blocks of the colorwheel task.';
+%     imgChoiceMade=imread('ChoiceMadeDirect.png');
+%     imageChoiceMade=Screen('MakeTexture',wPtr,imgChoiceMade);
+%     Instruction{4}= '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n For example, if this choice is selected you will do a few blocks of mostly Update 4 and you will earn 2 euros.';
+   imgChoiceExample=imread('ChoiceMadeExample2.png');
     imageChoiceExample=Screen('MakeTexture',wPtr,imgChoiceExample);
-    Instruction{5}= '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n If this choice is selected you will not have to redo the colorwheel task and you will earn 2 euros.';
-    Instruction{6}='Do not rush your answers. It is very important that you think of both the money and your experience of doing the specific trials of the task.';
-    Instruction{7}='If something is not clear, do not hesitate to contact the researchers!';
+    Instruction{4}= '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n For example, if this choice is selected you will not have to redo the colorwheel task and you will earn 2 euros.';
+    Instruction{5}='Do not rush your answers. It is very important that you think of both the money and your experience of doing the specific trials of the task.';
+    Instruction{6}='If something is not clear, do not hesitate to contact the researchers!';
     
 elseif level==4
     Instruction{1} = 'You finished the practice.\n\n You may now proceed with the choice task.';
     Instruction{2}='Good luck!';
     
 elseif level==5
-    Instruction{1}='This was the end of the choice task! \n\n Now one of your choices will be selected for the redo.';
+    Instruction{1}='This was the end of the choice task! \n\n Please communicate with the researchers.';
 end
 counter=1;
 
@@ -108,10 +116,13 @@ for i=1:100
         end
         
     elseif level==2
-        if counter==2
+        if counter==4
             Screen('DrawTexture',wPtr,imageChoiceNR)
             DrawFormattedText(wPtr,Instruction{counter},'center','center',textCol,wrptx,[],[],spacing);
             
+        elseif counter==6
+            Screen('DrawTexture',wPtr,imageChoiceMade)
+            DrawFormattedText(wPtr,Instruction{counter},'center','center',textCol,wrptx,[],[],spacing);
         else
             DrawFormattedText(wPtr,Instruction{counter},'center','center',textCol,wrptx,[],[],spacing);
             
@@ -119,10 +130,7 @@ for i=1:100
         
     elseif level==3
         if counter==4
-            Screen('DrawTexture',wPtr,imageChoiceMade)
-            DrawFormattedText(wPtr,Instruction{counter},'center','center',textCol,wrptx,[],[],spacing);
-            
-        elseif counter==5
+ 
             Screen('DrawTexture',wPtr,imageChoiceExample)
             DrawFormattedText(wPtr,Instruction{counter},'center','center',textCol,wrptx,[],[],spacing);
             

@@ -49,14 +49,14 @@ end
 subdirCh = fullfile(choiceDir,sprintf('Choices_sub_%d_session_%d',subNo,sessionNo));
 
 if ~exist(subdirCh,'dir')
-    mkdir(choiceDir,sprintf('Choices_sub_%d_session_%d',subNo,sessionNo,subNo));
+    mkdir(choiceDir,sprintf('Choices_sub_%d_session_%d',subNo,sessionNo));
 else
     randAttach = round(rand*10000);
     mkdir(choiceDir,sprintf('Choices_sub_%d_%d_session_%d',subNo,randAttach,sessionNo));
 end
 cd(chdir)
 BeautifulChoices(subNo,1,subdirCh);
-[~,choiceSZ,choiceCondition,bonus]=BeautifulChoices(subNo,0,subdirCh);
+BeautifulChoices(subNo,0,subdirCh);
 cd(rootdir)
 
 % BeautifulColorwheel(subNo,2,subdir,choiceSZ,choiceCondition,bonus)

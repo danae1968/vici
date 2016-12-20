@@ -140,7 +140,7 @@ try
 % 
   %for now
     if     practice==1
-           getInstructionsChoice(1,pms,wPtr);
+           getInstructionsChoice(2,pms,wPtr);
     elseif practice==0
            getInstructionsChoice(4,pms,wPtr);
     end
@@ -168,10 +168,10 @@ try
    
    elseif practice==0
        %%redo
-    [choiceSZ, choiceCondition,bonus]=Redo(pms,data);
-    varargout{1}=choiceSZ;
-    varargout{2}=choiceCondition;
-    varargout{3}=bonus;
+%     [choiceSZ, choiceCondition,bonus]=Redo(pms,data);
+%     varargout{1}=choiceSZ;
+%     varargout{2}=choiceCondition;
+%     varargout{3}=bonus;
     getInstructionsChoice(5,pms,wPtr)     
         % save data
      save(fullfile(pms.choicedir,dataFilename),'data','dataHeader','pms','bonus');
