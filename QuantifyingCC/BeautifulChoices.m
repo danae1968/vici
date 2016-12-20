@@ -142,7 +142,7 @@ try
 % 
   %for now
     if     practice==1
-           getInstructionsChoice(1,pms,wPtr);
+           getInstructionsChoice(2,pms,wPtr);
     elseif practice==0
            getInstructionsChoice(4,pms,wPtr);
     end

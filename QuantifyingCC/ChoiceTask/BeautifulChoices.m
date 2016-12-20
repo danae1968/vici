@@ -31,7 +31,7 @@ try
     %%%%%% or asks for it directly
     switch nargin
         case 0 %if no input asks for subNo and practice and provides file names
-            [subNo,dataFilename,dataFilenamePrelim,practice]=getInfoChoice; 
+            [subNo,dataFilename,dataFilenamePrelim,practice,session]=getInfoChoice; 
         case 3 % if subNo, practice status, directory provided in main script
             subNo=varargin{1};
             practice=varargin{2};
