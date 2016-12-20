@@ -37,10 +37,17 @@ try
             practice=varargin{2};
             choicedir=varargin{3};
              [subNo,dataFilename,dataFilenamePrelim,practice]=getInfoChoice(subNo,practice); 
+        case 4
+            subNo=varargin{1};
+            practice=varargin{2};
+            choicedir=varargin{3};
+            session=varargin{4};
+             [subNo,dataFilename,dataFilenamePrelim,practice,session]=getInfoChoice(subNo,practice,session); 
     end
     %% set experiment parameters
     %task version 1: No Redo; Version2: Direct comparison
     pms.practice=practice;
+    pms.session=session;
     pms.step=0.2;
     pms.min=[0.1 0.2]; %smallest offer 0.1, then 0.2 then increases by step
     pms.max1=2.2; %max amount offered for v1

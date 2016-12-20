@@ -165,7 +165,7 @@ end
 
                       end  %for N=1:numTrials
                       %for index=randperm(numTrials)
-                      filename=sprintf('ColorTest_s%d_pilot2.mat',pms.subNo);
+                      filename=sprintf('ColorTest_s%d_ses%d.mat',pms.subNo,pms.session);
 
                       if exist (filename,'file')
                             randAttach = round(rand*10000);
