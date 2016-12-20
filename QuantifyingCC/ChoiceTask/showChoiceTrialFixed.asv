@@ -31,8 +31,9 @@ for trial = 1:length(data.trialNumber)
     
     save(fullfile(pms.choicedir,dataFilenamePrelim.dataFilenamePrelim))
     
-    msgHard = double(sprintf('for €%.2f',data.hardOffer(trial)));
-    msgEasy = double(sprintf('for €%.2f',data.easyOffer(trial)));
+    msgMoney=double('for €');
+ msgHard = double(sprintf('for €%.2f',data.hardOffer(trial)));
+ msgEasy = sprintf('%s%.2f',msgMoney,data.easyOffer(trial));
     
     switch data.locationEasy(trial)
         case 1 %means easy option left, hard right
@@ -178,7 +179,7 @@ for trial = 1:length(data.trialNumber)
     DrawFormattedText(wPtr,msgRight, RC(1)-100,RC(2));
     DrawFormattedText(wPtr,msgTypeL, LC(1),LC(2)-60);
     DrawFormattedText(wPtr, msgLeft, LC(1),LC(2));
-    Screen('FrameRect',wPtr,[0 0 0],rect_Center);
+    Screen('FrameRect',wPtr,[0 0 0],rect_Center); 
     
     offerOnset = Screen('Flip',wPtr);
     %    imageArray=Screen('GetImage',wPtr);
@@ -226,23 +227,23 @@ for trial = 1:length(data.trialNumber)
                     resp =1;
                     Screen('FrameRect',wPtr, 0, FB_right, 2);
                 end
-                
+           
             end
-            RestrictKeysForKbCheck([])
+                    RestrictKeysForKbCheck([])
         end %key is down
         %         WaitSecs(.001);
-        %% present feedback
-        DrawFormattedText(wPtr,msgTypeR , RC(1)-100,RC(2)-60);
-        DrawFormattedText(wPtr,msgRight, RC(1)-100,RC(2));
-        DrawFormattedText(wPtr,msgTypeL, LC(1),LC(2)-60);
-        DrawFormattedText(wPtr, msgLeft, LC(1),LC(2));
-        Screen('FrameRect',wPtr,[0 0 0],rect_Center);
-        drawFixationCross(wPtr, rect);
-        Screen('Flip',wPtr,[],1);
-        %         imageArray=Screen('GetImage',wPtr);
-        %         r=randi(100,1);
-        %         imwrite(imageArray,sprintf('ChoiceMade%d.png',r),'png');
-        %     WaitSecs(0.5)
+            %% present feedback
+    DrawFormattedText(wPtr,msgTypeR , RC(1)-100,RC(2)-60);
+    DrawFormattedText(wPtr,msgRight, RC(1)-100,RC(2));
+    DrawFormattedText(wPtr,msgTypeL, LC(1),LC(2)-60);
+    DrawFormattedText(wPtr, msgLeft, LC(1),LC(2));
+    Screen('FrameRect',wPtr,[0 0 0],rect_Center);
+    drawFixationCross(wPtr, rect);
+    Screen('Flip',wPtr,[],1);
+%         imageArray=Screen('GetImage',wPtr);
+%         r=randi(100,1);
+%         imwrite(imageArray,sprintf('ChoiceMade%d.png',r),'png');
+%     WaitSecs(0.5) 
         
         
         
@@ -271,35 +272,35 @@ for trial = 1:length(data.trialNumber)
         case 9
             data.choiceAmount(trial)=NaN;
     end
-    
+
     
     %clear screen
     Screen('FillRect',wPtr, pms.background, rect);
     drawFixationCross(wPtr, rect);
     Screen('FrameRect',wPtr,[0 0 0],rect_Center);
     
-    Screen('Flip',wPtr);
-    %          imageArray=Screen('GetImage',wPtr);
-    %         r=randi(100,1);
-    %         imwrite(imageArray,sprintf('choiceMade%d',r),'bmp');
-    WaitSecs(pms.iti);
+         Screen('Flip',wPtr);
+%          imageArray=Screen('GetImage',wPtr);
+%         r=randi(100,1);
+%         imwrite(imageArray,sprintf('choiceMade%d',r),'bmp');
+         WaitSecs(pms.iti);
     
     
     %Break after every block
     if trial~=length(data.block)
         if data.block(trial)-data.block(trial+1)~=0
-            if pms.practice==0
-                DrawFormattedText(wPtr,sprintf('End of block %d, press any key to continue.',data.block(trial) ),'center','center',[0 0 0]);
-                Screen('Flip',wPtr)
-                KbWait();
-                WaitSecs(2)
-            elseif pms.practice==1
-                getInstructionsChoice(2,pms,wPtr)
-            end
-            
+        if pms.practice==0
+            DrawFormattedText(wPtr,sprintf('End of block %d, press any key to continue.',data.block(trial) ),'center','center',[0 0 0]);
+            Screen('Flip',wPtr)
+            KbWait();
+            WaitSecs(2)
+        elseif pms.practice==1
+            getInstructionsChoice(2,pms,wPtr)
+        end
+        
         end
     end
 end %trial loop
-save(fullfile(pms.choicedir,dataFilenamePrelim.dataFilenamePrelim)) % save after every trial in prelim file
+            save(fullfile(pms.choicedir,dataFilenamePrelim.dataFilenamePrelim)) % save after every trial in prelim file
 
 end

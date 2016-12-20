@@ -181,7 +181,7 @@ try
 %     varargout{3}=bonus;
     getInstructionsChoice(5,pms,wPtr)     
         % save data
-     save(fullfile(pms.choicedir,dataFilename),'data','dataHeader','pms','bonus');
+     save(fullfile(pms.choicedir,dataFilename),'data','dataHeader','pms');
 
    end
     
