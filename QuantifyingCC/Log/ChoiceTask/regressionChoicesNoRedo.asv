@@ -12,8 +12,11 @@ easyOffer=[0.1 round((0.2:0.2:2.2)*10)/10];
 maxValue=max(easyOffer);
 minValue=min(easyOffer);
 sesNo=1:3;
-
-for i=subNo
+sesNr=repmat(sesNo,1,numSubs);
+subNr=repmat(subNo',1,3);subNr=subNr';subNr=subNr(:);
+subF=[subNr sesNr'];
+for i=1:18 %% including empty matrices after i, so that they empty after every ppt
+    for j=subF
     choiceMatrix=[];
     easyOfferMatrix=[];
     % yfit=zeros(24,6);
@@ -28,7 +31,7 @@ for i=subNo
     Update=[];
     
     % for i=1:11
-    participant=sprintf('ColorFunChoice_s%d_ses%d.mat',i,3);
+    participant=sprintf('ColorFunChoice_s%d_ses%d.mat',j(1),j(2));
     load(participant)
     
     %% 1,2,3 of hard task represents ignore with increasing set size and 4,5,6 update
@@ -123,8 +126,10 @@ for i=subNo
     
 
 end %for i=1:11
+end
 % normSV=IPmatrix/fixedValue;
 % %  xlswrite('SVNoRedo',normSV)
-   csvwrite('IPmatrixNR3.csv',[(1:numSubs)' IPmatrixAll])
+%   csvwrite('IPmatrixAllNR.csv',[subNo' IPmatrixAll])
+
 
 end %function
