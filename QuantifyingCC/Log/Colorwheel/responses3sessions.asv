@@ -1,0 +1,65 @@
+[data]=performanceforR;
+
+subNr=[1 2 3 4 5 7];
+sesNr=1:3;
+
+subNo=data(:,1);sesNo=data(:,2);dev=data(:,3);rt=data(:,4);sz=data(:,5);type=data(:,6);
+for i=subNr
+    
+I1s1s1(i)=nanmedian(dev(subNo==i & type==0 & sz==1 & sesNo==1));
+I1s1s2(i)=nanmedian(dev(subNo==i & type==0 & sz==1 & sesNo==2));
+I1s1s3(i)=nanmedian(dev(subNo==i & type==0 & sz==1 & sesNo==3));
+I2s1s1(i)=nanmedian(dev(subNo==i & type==0 & sz==2 & sesNo==1));
+I2s1s2(i)=nanmedian(dev(subNo==i & type==0 & sz==2 & sesNo==2));
+I2s1s3(i)=nanmedian(dev(subNo==i & type==0 & sz==2 & sesNo==3));
+I3s1s1(i)=nanmedian(dev(subNo==i & type==0 & sz==3 & sesNo==1));
+I3s1s2(i)=nanmedian(dev(subNo==i & type==0 & sz==3 & sesNo==2));
+I3s1s3(i)=nanmedian(dev(subNo==i & type==0 & sz==3 & sesNo==3));
+I4s1s1(i)=nanmedian(dev(subNo==i & type==0 & sz==4 & sesNo==1));
+I4s1s2(i)=nanmedian(dev(subNo==i & type==0 & sz==4 & sesNo==2));
+I4s1s3(i)=nanmedian(dev(subNo==i & type==0 & sz==4 & sesNo==3));
+
+U1s1s1(i)=nanmedian(dev(subNo==i & type==2 & sz==1 & sesNo==1));
+U1s1s2(i)=nanmedian(dev(subNo==i & type==2 & sz==1 & sesNo==2));
+U1s1s3(i)=nanmedian(dev(subNo==i & type==2 & sz==1 & sesNo==3));
+U2s1s1(i)=nanmedian(dev(subNo==i & type==2 & sz==2 & sesNo==1));
+U2s1s2(i)=nanmedian(dev(subNo==i & type==2 & sz==2 & sesNo==2));
+U2s1s3(i)=nanmedian(dev(subNo==i & type==2 & sz==2 & sesNo==3));
+U3s1s1(i)=nanmedian(dev(subNo==i & type==2 & sz==3 & sesNo==1));
+U3s1s2(i)=nanmedian(dev(subNo==i & type==2 & sz==3 & sesNo==2));
+U3s1s3(i)=nanmedian(dev(subNo==i & type==2 & sz==3 & sesNo==3));
+U4s1s1(i)=nanmedian(dev(subNo==i & type==2 & sz==4 & sesNo==1));
+U4s1s2(i)=nanmedian(dev(subNo==i & type==2 & sz==4 & sesNo==2));
+U4s1s3(i)=nanmedian(dev(subNo==i & type==2 & sz==4 & sesNo==3));
+
+I1s1s1RT(i)=nanmedian(rt(subNo==i & type==0 & sz==1 & sesNo==1));
+I1s1s2RT(i)=nanmedian(rt(subNo==i & type==0 & sz==1 & sesNo==2));
+I1s1s3RT(i)=nanmedian(rt(subNo==i & type==0 & sz==1 & sesNo==3));
+I2s1s1RT(i)=nanmedian(rt(subNo==i & type==0 & sz==2 & sesNo==1));
+I2s1s2RT(i)=nanmedian(rt(subNo==i & type==0 & sz==2 & sesNo==2));
+I2s1s3RT(i)=nanmedian(rt(subNo==i & type==0 & sz==2 & sesNo==3));
+I3s1s1RT(i)=nanmedian(rt(subNo==i & type==0 & sz==3 & sesNo==1));
+I3s1s2RT(i)=nanmedian(rt(subNo==i & type==0 & sz==3 & sesNo==2));
+I3s1s3RT(i)=nanmedian(rt(subNo==i & type==0 & sz==3 & sesNo==3));
+I4s1s1RT(i)=nanmedian(rt(subNo==i & type==0 & sz==4 & sesNo==1));
+I4s1s2RT(i)=nanmedian(rt(subNo==i & type==0 & sz==4 & sesNo==2));
+I4s1s3RT(i)=nanmedian(rt(subNo==i & type==0 & sz==4 & sesNo==3));
+
+U1s1s1RT(i)=nanmedian(rt(subNo==i & type==2 & sz==1 & sesNo==1));
+U1s1s2RT(i)=nanmedian(rt(subNo==i & type==2 & sz==1 & sesNo==2));
+U1s1s3RT(i)=nanmedian(rt(subNo==i & type==2 & sz==1 & sesNo==3));
+U2s1s1RT(i)=nanmedian(rt(subNo==i & type==2 & sz==2 & sesNo==1));
+U2s1s2RT(i)=nanmedian(rt(subNo==i & type==2 & sz==2 & sesNo==2));
+U2s1s3RT(i)=nanmedian(rt(subNo==i & type==2 & sz==2 & sesNo==3));
+U3s1s1RT(i)=nanmedian(rt(subNo==i & type==2 & sz==3 & sesNo==1));
+U3s1s2RT(i)=nanmedian(rt(subNo==i & type==2 & sz==3 & sesNo==2));
+U3s1s3RT(i)=nanmedian(rt(subNo==i & type==2 & sz==3 & sesNo==3));
+U4s1s1RT(i)=nanmedian(rt(subNo==i & type==2 & sz==4 & sesNo==1));
+U4s1s2RT(i)=nanmedian(rt(subNo==i & type==2 & sz==4 & sesNo==2));
+U4s1s3RT(i)=nanmedian(rt(subNo==i & type==2 & sz==4 & sesNo==3));
+
+end
+
+statmatAcc=[Is1s1 Is1s2 Is1s3 Is2s1 Is2s2 Is2s3 Is3s1 Is3s2 Is3s3 Is4s1 Is4s2 Is4s3 Us1s1 Us1s2 Us1s3 Us2s1 Us2s2 Us2s3 Us3s1 Us3s2 Us3s3 Us4s1 Us4s2 Us4s3];
+
+
