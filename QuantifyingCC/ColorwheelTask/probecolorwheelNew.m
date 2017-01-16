@@ -7,7 +7,7 @@ function [respX,respY,rt,colortheta,respXAll,respYAll,rtAll]=probecolorwheelNew(
 % colors are created with arcs. Arc's size is reversely analogous
 % to number of colors used. By default,the first arc starts at vertical and adds
 % on clockwise until the circle is completed. We introduce a shift every
-% trial so that the colorwheel orientation changes. Colortheta is a struct with
+% trial so that the colorwheel orientation change7s. Colortheta is a struct with
 % the angle of every color in the wheel and the corresponding color. 
 % 
 % SYNTAX

@@ -81,6 +81,7 @@ try
     pms.textSize=22;
     pms.textFont='Times New Roman';
     pms.textStyle=1; 
+    pms.ovalColor=[0 0 0];
     pms.subNo=subNo;
     pms.session=session;
     pms.matlabVersion='R2013a';
@@ -102,6 +103,7 @@ try
     pms.feedbackDuration=0.5; %feedback during colorwheel
     pms.feedbackDurationPr=1;
     pms.jitter = 0;
+    pms.iti=0.7;
     if exist('colordir','var')
         pms.colordir=colordir;
     else
