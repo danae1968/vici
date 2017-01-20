@@ -38,11 +38,10 @@ BeautifulColorwheel(subNo,1,subdir,sessionNo) %practice=1
 BeautifulColorwheel(subNo,0,subdir,sessionNo) %practice=0
 
 %%% choice task
-RestrictKeysForKbCheck(32);
-disp('Press space to start the choice task');
+RestrictKeysForKbCheck(32)
 KbWait();
 disp('TASK 2: Choices');
-RestrictKeysForKbCheck([]);
+
 
 choiceDir = fullfile(logdir,'ChoiceTask');
 if ~exist(choiceDir,'dir');

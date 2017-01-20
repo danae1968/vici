@@ -103,7 +103,8 @@ try
     pms.feedbackDuration=0.5; %feedback during colorwheel
     pms.feedbackDurationPr=1;
     pms.jitter = 0;
-    pms.iti=0.7;
+    pms.iti=0.1;
+    pms.signal=0.5;
     if exist('colordir','var')
         pms.colordir=colordir;
     else

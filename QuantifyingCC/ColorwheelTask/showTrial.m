@@ -48,11 +48,13 @@ ovalRect=CenterRectOnPoint(rectTwo,pms.xCenter,pms.yCenter);
 %% loop around trials and blocks for stimulus presentation
 for p=1:pms.numBlocks
     for g=1:pms.numTrials
-        for phase = 1:6
-            if phase == 1 %ITI
+        for phase = 1:7
+            if phase == 1 %new trial
                 Screen('FillOval',wPtr,pms.ovalColor,ovalRect);
                 Screen('Flip',wPtr)
-                WaitSecs(0.5)
+                                % %                         imageArray=Screen('GetImage',wPtr);
+                % %                         imwrite(imageArray,sprintf('Signal%d%d.png',g,p),'png');
+                WaitSecs(pms.signal)
             elseif phase==2
                 Screen('Textsize', wPtr, 34);
                 Screen('Textfont', wPtr, 'Times New Roman');
@@ -340,6 +342,11 @@ for p=1:pms.numBlocks
                     data(g,p).interColLoc3=trial(g,p).interColLoc3;
                     data(g,p).interColLoc4=trial(g,p).interColLoc4;
                 end
+            elseif phase==7 %ITI
+                                drawFixationCross(wPtr,rect)
+                Screen('Flip',wPtr);
+                T.iti_on(g,p) = GetSecs;
+                WaitSecs(pms.iti)
             end %if phase ==1
         end % for phase 1:6
     end% for p=1:numBlocks
