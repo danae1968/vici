@@ -52,8 +52,8 @@ for p=1:pms.numBlocks
             if phase == 1 %new trial
                 Screen('FillOval',wPtr,pms.ovalColor,ovalRect);
                 Screen('Flip',wPtr)
-                                % %                         imageArray=Screen('GetImage',wPtr);
-                % %                         imwrite(imageArray,sprintf('Signal%d%d.png',g,p),'png');
+%                                                       imageArray=Screen('GetImage',wPtr);
+%                                     imwrite(imageArray,sprintf('Signal%d%d.png',g,p),'png');
                 WaitSecs(pms.signal)
             elseif phase==2
                 Screen('Textsize', wPtr, 34);
@@ -91,8 +91,8 @@ for p=1:pms.numBlocks
                         T.encoding_on(g,p) = GetSecs;
                         Screen('Flip',wPtr);
                         
-                        %                         imageArray=Screen('GetImage',wPtr);
-                        %                         imwrite(imageArray,sprintf('Encoding%d%d.png',g,p),'png');
+                                                imageArray=Screen('GetImage',wPtr);
+                                                imwrite(imageArray,sprintf('Encoding%d%d.png',g,p),'png');
                         
                         switch trial(g,p).type
                             case 0
